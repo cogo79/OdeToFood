@@ -11,9 +11,11 @@ namespace OdeToFood.Controllers
         //
         // GET: /Cuisine/
 
-        public ActionResult Search()
+        public ActionResult Search(string name = "Default food in the mood ;D")
         {
-            return Content("Hello!"); ;
+            var message = Server.HtmlEncode(name);
+
+            return Content(message); ;
         }
 
     }
